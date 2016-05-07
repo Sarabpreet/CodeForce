@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>ReForce : Main App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+  </head>
+  <body>
+hello
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+<script>
+if (annyang) {
+
+  var commands = {
+    'vibrate': function() {
+     vibe(1000);
+    }
+  };
+
+
+  annyang.addCommands(commands);
+
+
+
+}
+</script>
+
+
+
+<script> 
+function vibe(x){
+
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+if ("vibrate" in navigator) {
+	// vibration API supported
+	navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+	navigator.vibrate(x);
+
+}
+
+}
+
+
+
+speak("Hello User with a weird blue turban! tell me your password");
+vibe(50);
+annyang.start(); 
+speak("Awesome!, you got it right!");
+speak("Now, you can start playing with me! (no pun intended)"); 
+speak("please note, to halt the program all you need to say is......estop");
+
+function speak(st){
+
+
+var utterance = new SpeechSynthesisUtterance(st);
+window.speechSynthesis.speak(utterance);
+
+
+}
+
+</script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+
+  
+  </body>
+</html>
