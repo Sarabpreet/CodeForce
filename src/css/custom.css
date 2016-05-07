@@ -33,11 +33,12 @@ font-weight: bolder;
 
 	background: #4770ad;
 	height:10px;
+	/*transition: all 10ms ease;*/
 }
 
 .border-status2{
 
-	background:#3d5f91;
+	background:#cd3636;
 	height:10px;
 	position: relative;
 	top: -10px;
@@ -69,6 +70,12 @@ $dark-blue:#3d5f91;
 	background:#d6d6d6;
 }
 
-body{
-		
+.node{
+
+	background:#e7e7e7;
+	display: inline;
+	padding: 5px;
+	font-size: 10px;
+	text-transform: none;
+	border-radius: 30px;
 }
