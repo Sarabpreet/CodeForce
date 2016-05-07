@@ -1,0 +1,14 @@
+<script> 
+speak("Awesome!, you got it right!");
+speak("Now, you can start playing with me! (no pun intended)"); 
+speak("please note, to halt the program all you need to say is......isshttthop");
+
+function speak(st){
+
+
+var utterance = new SpeechSynthesisUtterance(st);
+window.speechSynthesis.speak(utterance);
+
+
+}
+</script>
