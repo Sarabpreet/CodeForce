@@ -178,7 +178,7 @@ var commands = {
       			door('logout');
     },
     'include default': function() {
-      			 $('.main textarea').append(" #include <stdio.h> \n #include <conio.h> \n #include <math.h>");
+      			 $('.main textarea').append(" #include <stdio.h> #include <conio.h>  #include <math.h>");
     },
     'hash': function() {
       			 $('.main textarea').append(" #");
