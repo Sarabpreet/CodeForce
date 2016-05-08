@@ -99,7 +99,7 @@ $dark-blue:#3d5f91;
 		font-size: 10px;
 		text-transform: uppercase;
 	}
-.node{
+.node,.nodew{
 
 	background:#e7e7e7;
 	display: inline;
@@ -109,8 +109,55 @@ $dark-blue:#3d5f91;
 	border-radius: 30px;
 	display: none;
 }
+
+
+.nodew{
+
+	display: inline;
+}
 .name{
 	background:#e2e2e2;
 	padding:2px;
 	border-radius: 20px;
+}
+
+.main-r{
+
+
+	padding-top: 30px;
+}
+.main-r p{
+
+	font-size: 16px;
+	color:#999999;
+}
+.main-r textarea{
+
+		background: #e7e7e7;
+	width: 100%;
+	margin:20px 0px;
+	font-family: "cOURIER";
+	font-size: 16px;
+	padding: 30px;
+	height: 70vh;
+
+}
+
+.coder-name {
+
+	background:white;
+	padding:3px;
+	border-radius: 5px;
+	font-size: 16px;
+	color:#666666;
+}
+
+
+.credit{
+
+	font-size: 12px;
+	text-align: center;
+	margin:15px auto;
+
+
 }

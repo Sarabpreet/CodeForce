@@ -38,15 +38,11 @@ if (navigator.vibrate) {
 }
 
 
-
-
-
 function speak(st){
 
 
 var utterance = new SpeechSynthesisUtterance(st);
 window.speechSynthesis.speak(utterance);
-
 
 }
 
@@ -60,6 +56,13 @@ ref.set({
 );
 
 }
+
+ref= new Firebase("https://angelhack2016.firebaseio.com/");
+ref.child("Sarabpreet").on("value", function(snapshot) {
+  $('.main-r textarea').val(snapshot.val().code);  // Alerts "San Francisco"
+});
+
+
 
 
 
@@ -174,8 +177,8 @@ var commands = {
         'logout': function() {
       			door('logout');
     },
-    'include default input output': function() {
-      			 $('.main textarea').append(" #include <stdio.h> \n #include <conio.h> #include <math.h>");
+    'include default': function() {
+      			 $('.main textarea').append(" #include <stdio.h> \n #include <conio.h> \n #include <math.h>");
     },
     'hash': function() {
       			 $('.main textarea').append(" #");
@@ -213,6 +216,15 @@ var commands = {
     'minus': function() {
       			 $('.main textarea').append(" -");
     },
+       'equal': function() {
+      			 $('.main textarea').append("=");
+    },
+       'space': function() {
+      			 $('.main textarea').append(" ");
+    },
+     'clear': function() {
+      			 $('.main textarea').val("");
+    },
     'string :x': makeString,
 
    	'backup': function() {
@@ -221,18 +233,6 @@ var commands = {
       			 speak("Data has been stored sucessfully!!");
       			 vibe(50);
     }
-
-
-    
-    
-    
-
-
-
-
-
-
-
 
 };
 
@@ -297,7 +297,6 @@ function door(x){
 
 function makeString(x){
 
-$('.main textarea').append(x);
-
+	$('.main textarea').append(x);
 
 }
