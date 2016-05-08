@@ -178,7 +178,7 @@ var commands = {
       			door('logout');
     },
     'include default': function() {
-      			 $('.main textarea').append(" #include <stdio.h> #include <conio.h>  #include <math.h>");
+      			 $('.main textarea').append(" #include <stdio.h> \n #include <conio.h> \n #include <math.h>");
     },
     'hash': function() {
       			 $('.main textarea').append(" #");
@@ -240,13 +240,6 @@ var commands = {
 
 annyang.addCommands(commands);
 
-annyang.addCallback('resultMatch',function(){
-
-
-speak("Done!");
-vibe(50);
-
-});
 
 
 annyang.addCallback('resultNoMatch',function(){
@@ -260,9 +253,10 @@ annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
   console.log(userSaid); // sample output: 'hello'
   console.log(commandText); // sample output: 'hello (there)'
   console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+  speak("Done!");
+vibe(50);
+
 });
-
-
 
 
 annyang.start();
