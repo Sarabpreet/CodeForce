@@ -50,16 +50,16 @@ window.speechSynthesis.speak(utterance);
 
 }
 
-//   var ref;
-//   var userX;
-// function createRefUpdate(userX,code){
-// ref= new Firebase("https://angelhack2016.firebaseio.com/"+userX);
-// ref.set({
-// 	code:code
-//   }
-// );
+  var ref;
+  var userX;
+function createRefUpdate(userX,code){
+ref= new Firebase("https://angelhack2016.firebaseio.com/"+userX);
+ref.set({
+	code:code
+  }
+);
 
-// }
+}
 
 
 
@@ -76,104 +76,157 @@ annyang.setLanguage('en-IN');
 var commands = {
 'fine :x': door,
 'automatic': function() {
-      $('.main text').append(" automatic");
+      $('.main textarea').append(" automatic");
     },
  'case': function() {
-      $('.main text').append(" case ");
+      $('.main textarea').append(" case ");
     },
 'constant': function() {
-      $('.main text').append(" const");
+      $('.main textarea').append(" const");
     },
 'character': function() {
-      $('.main text').append(" char");
+      $('.main textarea').append(" char");
     },
 'default': function() {
-      $('.main text').append(" default");
+      $('.main textarea').append(" default");
     },
 'do': function() {
-      $('.main text').append(" do");
+      $('.main textarea').append(" do");
     },
 'double': function() {
-      $('.main text').append(" double");
+      $('.main textarea').append(" double");
     },
  'else': function() {
-      $('.main text').append(" double");
+      $('.main textarea').append(" double");
     },
   'enum': function() {
-      $('.main text').append(" enum");
+      $('.main textarea').append(" enum");
     },
   'external': function() {
-      $('.main text').append(" external");
+      $('.main textarea').append(" external");
     },
 
     'float': function() {
-      $('.main text').append(" float");
+      $('.main textarea').append(" float");
     },
 
     'for': function() {
-      $('.main text').append(" for");
+      $('.main textarea').append(" for");
     },
 
-    'goto': function() {
-      $('.main text').append(" goto");
+    'go to': function() {
+      $('.main textarea').append(" goto");
     },
 
     'if': function() {
-      $('.main text').append(" if");
+      $('.main textarea').append(" if");
     },
 
     'integer': function() {
-      $('.main text').append(" int");
+      $('.main textarea').append(" int");
     },
 
     'long': function() {
-      $('.main text').append(" long");
+      $('.main textarea').append(" long");
     },
     'register': function() {
-      $('.main text').append(" register");
+      $('.main textarea').append(" register");
     },
     'return': function() {
-      $('.main text').append(" return");
+      $('.main textarea').append(" return");
     },
     'short': function() {
-      $('.main text').append(" short");
+      $('.main textarea').append(" short");
     },
     'signed': function() {
-      $('.main text').append(" signed");
+      $('.main textarea').append(" signed");
     },
     'size of': function() {
-      $('.main text').append(" sizeof");
+      $('.main textarea').append(" sizeof");
     },
     'static': function() {
-      $('.main text').append(" static");
+      $('.main textarea').append(" static");
     },
         'struct': function() {
-      $('.main text').append(" static");
+      $('.main textarea').append(" static");
     },
         'switch': function() {
-      $('.main text').append(" switch");
+      $('.main textarea').append(" switch");
     },
         'size of': function() {
-      $('.main text').append(" sizeof");
+      $('.main textarea').append(" sizeof");
     },
     'defination': function() {
-      $('.main text').append(" typedef");
+      $('.main textarea').append(" typedef");
     },
         'union': function() {
-      $('.main text').append(" union");
+      $('.main textarea').append(" union");
     },
         'void': function() {
-      $('.main text').append(" void");
+      $('.main textarea').append(" void");
     },
         'volatile': function() {
-      $('.main text').append(" volatile");
+      $('.main textarea').append(" volatile");
     },
      'login': function() {
       			door('login');
     },
         'logout': function() {
       			door('logout');
+    },
+    'include default input output': function() {
+      			 $('.main textarea').append(" #include <stdio.h> \n #include <conio.h> #include <math.h>");
+    },
+    'hash': function() {
+      			 $('.main textarea').append(" #");
+    },
+    'open sea': function() {
+      			 $('.main textarea').append(" ( ");
+    },
+    'close sea': function() {
+      			 $('.main textarea').append(" )");
+    },
+     'open ball': function() {
+      			 $('.main textarea').append(" [");
+    },
+    
+    'close ball': function() {
+      			 $('.main textarea').append(" ]");
+    },
+    
+   'open pan': function() {
+      			 $('.main textarea').append(" {");
+    },
+    
+    'close pan': function() {
+      			 $('.main textarea').append(" }");
+    },
+    'divide': function() {
+      			 $('.main textarea').append(" /");
+    },
+       'multiply': function() {
+      			 $('.main textarea').append(" *");
+    },
+       'addition': function() {
+      			 $('.main textarea').append(" +");
+    },
+    'minus': function() {
+      			 $('.main textarea').append(" -");
+    },
+    'string :x': makeString,
+
+   	'backup': function() {
+      			 // $('.main textarea').append(" -");
+      			 createRefUpdate("Sarabpreet",$('.main textarea').val());
+      			 speak("Data has been stored sucessfully!!");
+      			 vibe(50);
     }
+
+
+    
+    
+    
+
 
 
 
@@ -198,7 +251,7 @@ vibe(50);
 
 annyang.addCallback('resultNoMatch',function(){
 
-speak(" Not Cool");
+speak("");
 vibe(100);
 
 });
@@ -227,7 +280,7 @@ function door(x){
 	$('.hide-home').hide();
 	$('.node').css("display","inline");
 	$('.main textarea').css("display","block");
-	speak("Logged In");
+	speak("You are logged In");
 	vibe(50);
 
 	}
@@ -236,8 +289,15 @@ function door(x){
 	$('.hide-home').show();
 	$('.node').css("display","none");
 	$('.main textarea').css("display","none");
-	speak("LOGGED OUT");
+	speak("You are logged out");
 	vibe(50);
 
 	}
+}
+
+function makeString(x){
+
+$('.main textarea').append(x);
+
+
 }
