@@ -39,70 +39,6 @@ if (navigator.vibrate) {
 
 
 
-var keywords=["auto",
-"break",
-"case",
-"char",
-"const",
-"continue",
-"default",
-"do",
-"double",
-"else",
-"enum",
-"extern",
-"float",
-"for",
-"goto",
-"if",
-"int",
-"long",
-"register",
-"return",
-"short",
-"signed",
-"sizeof",
-"static",
-"struct",
-"switch",
-"typedef",
-"union",
-"unsigned",
-"void",
-"volatile"];
-
-var keywordsHuman=["automatic",
-"break",
-"case",
-"character",
-"constant",
-"continue",
-"default",
-"do",
-"double",
-"else",
-"enum",
-"external",
-"float",
-"for",
-"goto",
-"if",
-"integer",
-"long",
-"register",
-"return",
-"short",
-"signed",
-"size of",
-"static",
-"struct",
-"switch",
-"type defination",
-"union",
-"unsigned",
-"void",
-"volatile"];
-
 
 
 function speak(st){
@@ -114,32 +50,16 @@ window.speechSynthesis.speak(utterance);
 
 }
 
+//   var ref;
+//   var userX;
+// function createRefUpdate(userX,code){
+// ref= new Firebase("https://angelhack2016.firebaseio.com/"+userX);
+// ref.set({
+// 	code:code
+//   }
+// );
 
-// User story 
-// User logs in website 
-// User grabs a screenshot via camera (haven on demand) 
-// User speaks in chrome mobile
-// User sees what he spoke in 
-
-
-// Screen one 
-
-
-// Khul ja sim sim ? (yes, hindi) 
-// notepad says "hi sarabpreet, would you like to create a new thing?
-// i say, "Create new"
-//
-  var ref;
-  var userX;
-function createRefUpdate(userX,code){
-
-ref= new Firebase("https://angelhack2016.firebaseio.com/"+userX);
-ref.set({
-	code:code
-  }
-);
-
-}
+// }
 
 
 
@@ -154,38 +74,111 @@ annyang.setLanguage('en-IN');
 // });
 
 var commands = {
-'fine :x': door
-// 'automatic': add('auto'),
-// "break":add('break'),
-// "case":add('case'),
-// "character":add('char'),
-// "constant":add('cons'),
-// "continue":add('continue'),
-// "default":add('default'),
-// "do":add('do'),
-// "double":add('double'),
-// "else":add('else'),
-// "enum":add('enum'),
-// "external":add('external'),
-// "float":add('float'),
-// "for":add('for'),
-// "goto":add('goto'),
-// "if":add('if'),
-// "integer":add('int'),
-// "long":add('long'),
-// "register":add('register'),
-// "return":add('return'),
-// "short": add('short'),
-// "signed":add('signed'),
-// "size of":add('sizeof'),
-// "static":add('static'),
-// "struct":add('struct'),
-// "switch":add('switch'),
-// "type defination":add('typedef'),
-// "union":add('union'),
-// "unsigned":add('unsigned'),
-// "void":add('void'),
-// "volatile":add('volatile')
+'fine :x': door,
+'automatic': function() {
+      $('.main text').append(" automatic");
+    },
+ 'case': function() {
+      $('.main text').append(" case ");
+    },
+'constant': function() {
+      $('.main text').append(" const");
+    },
+'character': function() {
+      $('.main text').append(" char");
+    },
+'default': function() {
+      $('.main text').append(" default");
+    },
+'do': function() {
+      $('.main text').append(" do");
+    },
+'double': function() {
+      $('.main text').append(" double");
+    },
+ 'else': function() {
+      $('.main text').append(" double");
+    },
+  'enum': function() {
+      $('.main text').append(" enum");
+    },
+  'external': function() {
+      $('.main text').append(" external");
+    },
+
+    'float': function() {
+      $('.main text').append(" float");
+    },
+
+    'for': function() {
+      $('.main text').append(" for");
+    },
+
+    'goto': function() {
+      $('.main text').append(" goto");
+    },
+
+    'if': function() {
+      $('.main text').append(" if");
+    },
+
+    'integer': function() {
+      $('.main text').append(" int");
+    },
+
+    'long': function() {
+      $('.main text').append(" long");
+    },
+    'register': function() {
+      $('.main text').append(" register");
+    },
+    'return': function() {
+      $('.main text').append(" return");
+    },
+    'short': function() {
+      $('.main text').append(" short");
+    },
+    'signed': function() {
+      $('.main text').append(" signed");
+    },
+    'size of': function() {
+      $('.main text').append(" sizeof");
+    },
+    'static': function() {
+      $('.main text').append(" static");
+    },
+        'struct': function() {
+      $('.main text').append(" static");
+    },
+        'switch': function() {
+      $('.main text').append(" switch");
+    },
+        'size of': function() {
+      $('.main text').append(" sizeof");
+    },
+    'defination': function() {
+      $('.main text').append(" typedef");
+    },
+        'union': function() {
+      $('.main text').append(" union");
+    },
+        'void': function() {
+      $('.main text').append(" void");
+    },
+        'volatile': function() {
+      $('.main text').append(" volatile");
+    },
+     'login': function() {
+      			door('login');
+    },
+        'logout': function() {
+      			door('logout');
+    }
+
+
+
+
+
 
 
 };
@@ -194,9 +187,8 @@ var commands = {
 
 annyang.addCommands(commands);
 
-
-
 annyang.addCallback('resultMatch',function(){
+
 
 speak("Cool");
 vibe(50);
@@ -211,6 +203,12 @@ vibe(100);
 
 });
 
+annyang.start();
+
+function Magic(text){
+
+	$('.main textarea').append(text);
+}
 
 function helloFunction(){
 
