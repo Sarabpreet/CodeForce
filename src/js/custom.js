@@ -223,7 +223,7 @@ var commands = {
       			 $('.main textarea').append(" ");
     },
      'clear': function() {
-      			 $('.main textarea').val("");
+      			 $('.main textarea').val(" ");
     },
     'string :x': makeString,
 
@@ -243,7 +243,7 @@ annyang.addCommands(commands);
 annyang.addCallback('resultMatch',function(){
 
 
-speak("Cool");
+speak("Done!");
 vibe(50);
 
 });
@@ -251,10 +251,19 @@ vibe(50);
 
 annyang.addCallback('resultNoMatch',function(){
 
-speak("");
+speak(" no match found");
 vibe(100);
 
 });
+
+annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
+  console.log(userSaid); // sample output: 'hello'
+  console.log(commandText); // sample output: 'hello (there)'
+  console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+});
+
+
+
 
 annyang.start();
 
